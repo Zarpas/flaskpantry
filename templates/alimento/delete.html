@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% from "macros/form_field.html" import form_field %}
+
+{% block title %}Editar {{ alimento.nombre }}{% endblock %}
+
+{% block content_title %}{{ alimento.nombre }}{% endblock %}
+
+{% block content %}
+  <form action="{{ url_for('delete_alimento', id=alimento.id) }}" class="form form-horizontal" method="post">
+  	<fieldset>
+      <legend>Borrar este alimento?</legend>
+      <button class="btn btn-danger" type="submit">Borrar</button>
+      <a class="btn" href="{{ url_for('detail_alimento', id=alimento.id) }}">Cancelar</a>
+    </fieldset>
+  </form>
+{% endblock %}

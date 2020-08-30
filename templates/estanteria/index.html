@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Estanterias{% endblock %}
+
+{% block content_title %}Estanterias{% endblock %}
+
+{% block content %}
+  {% include "includes/list.html" %}
+{% endblock %}
+
+{% block sidebar %}
+  <ul class="well nav nav-stacked">
+  <li><a href="#">Sidebar item</a></li>
+  <li><a href="{{ url_for('new_estanteria') }}">Añadir</a></li>
+  </ul>
+{% endblock %}

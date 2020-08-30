@@ -1,0 +1,3 @@
+{% for estanteria in object_list.items %}
+  <p><a href="{{ url_for('detail_estanteria', id=estanteria.id) }}">{{ estanteria.nombre }}</a></p>
+{% endfor %}

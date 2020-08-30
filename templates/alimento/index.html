@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Alimentos{% endblock %}
+
+{% block content_title %}Alimentos{% endblock %}
+
+{% block content %}
+  {% for estanteria in object_list.items %}
+    <p><a href="{{ url_for('detail_alimento', id=estanteria.id) }}">{{ estanteria.producto.nombre }} - {{ estanteria.estanteria.nombre }}</a></p>
+  {% endfor %}
+{% endblock %}
+
+{% block sidebar %}
+  <ul class="well nav nav-stacked">
+  <li><a href="#">Sidebar item</a></li>
+  <li><a href="{{ url_for('new_alimento') }}">Añadir</a></li>
+  </ul>
+{% endblock %}
